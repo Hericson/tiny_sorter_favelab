@@ -34,3 +34,8 @@ Página p5.js adaptada a partir do projeto fornecido, com Web Serial para **Ardu
 - `index.html` referencia bibliotecas JavaScript externas via CDN; é necessária conexão à Internet.
 - Ajuste os ângulos no arquivo `.ino` para corresponder ao mecanismo real.
 - A montagem não foi validada em hardware físico nesta execução.
+
+
+## Movimento original do Tiny Sorter
+
+O sketch Arduino Uno foi aproximado ao sorter_sketch.ino original: inicializa em 60 graus, oscila entre 60 e 90 graus quando ocioso; para Pedra (A) move a 0 graus, espera 2 s e retorna gradualmente ate 75 graus (passos de 5 ms); para Concha (B) move a 180 graus, espera 2 s e retorna gradualmente ate 75 graus (passos de 20 ms). Em ambos os casos espera mais 1 s. A comunicacao foi substituida de WebUSB por Serial USB a 115200 baud, usando A/B para compatibilidade com a pagina atual. O comando C posiciona em 75 graus para teste. O retorno gradual de 180 a 75 corrige a condicao de parada invertida presente no sketch original.
